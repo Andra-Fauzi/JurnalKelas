@@ -11,6 +11,7 @@ body{
 .sidebar {
     background-color: #2a84dd;
     color: white;
+    text-align: center;
 }
 
 .navigation {

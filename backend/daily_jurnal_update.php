@@ -1,12 +1,14 @@
 <?php
 include 'config.php';
 
-$id = $_POST['id'];
+$id = $_GET['id'];
 $kelas = $_POST['kelas'];
 $jurnal= $_POST['jurnal'];
+$nama_guru = $_POST['nama_guru'];
 
 
 $sql = "UPDATE daily_journals SET
+        nama_guru='$nama_guru',
         kelas='$kelas',
         jurnal='$jurnal',
         WHERE id=$id";

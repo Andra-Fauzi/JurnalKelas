@@ -12,9 +12,9 @@
         <h1>jurnal kelas</h1>
         <div class="navigation">
             
-            <a href="#">dashboard</a>
-            <a href="#">absensi</a>
-            <a href="#">jurnal</a>
+            <a href="index.php">dashboard</a>
+            <a href="absensi.php">absensi</a>
+            <a href="jurnal.php">jurnal</a>
         </div>
         </div>
         <div class="content">

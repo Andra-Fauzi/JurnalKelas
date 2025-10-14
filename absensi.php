@@ -12,9 +12,9 @@
         <h1>jurnal kelas</h1>
         <div class="navigation">
             
-            <a href="#">dashboard</a>
-            <a href="#">absensi</a>
-            <a href="#">jurnal</a>
+            <a href="index.php">dashboard</a>
+            <a href="absensi.php">absensi</a>
+            <a href="jurnal.php">jurnal</a>
         </div>
     </div>
     <div class="content">
@@ -38,10 +38,10 @@
                         <td>RPL</td>
                         <td>30</td>
                         <td>28</td>
-                        <td>hapus | edit </td>
+                        <td>hapus <br> edit </td>
                     </tr>
                 </table>
-                <a href="#" class="tambah">tambah data</a>
+                <a href="form_absensi.php" class="tambah">tambah data</a>
         </div>
 
         </div>
