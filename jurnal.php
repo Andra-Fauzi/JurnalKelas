@@ -32,14 +32,15 @@
                         
                         <td>aksi</td>
                     </tr>
+                    <?php include "backend/daily_jurnal_read.php" ?>
+                    <?php foreach($data as $row): ?>
                     <tr>
-                        <td>1</td>
-                        <td>XI RPL 2</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi numquam impedit quisquam excepturi doloremque! Eius omnis odio aliquam blanditiis ex, molestiae tempore veniam suscipit! Nulla quasi esse labore quidem quam!</td>
-                    
-                        
-                        <td>hapus <br> edit </td>
+                        <td><?= $row["id"] ?></td>
+                        <td><?= $row["kelas"] ?></td>
+                        <td><?= $row["jurnal"] ?></td>
+                        <td><a href="backend/daily_jurnal_delete.php?id=<?= $row['id']?>">Hapus</a> <br> <a href="form_jurnal.php?id=<?= $row["id"] ?>">Edit</a></td>
                     </tr>
+                    <?php endforeach ?>
                 </table>
                 <a href="form_jurnal.php" class="tambah">tambah data</a>
         </div>

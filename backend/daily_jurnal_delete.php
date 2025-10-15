@@ -10,4 +10,6 @@ if ($koneksi->query($sql) === TRUE) {
 } else {
     echo "Error: " . $koneksi->error;
 }
+
+header("Location: ../jurnal.php");
 ?>

@@ -1,7 +1,8 @@
 <?php
 include 'config.php';
 
-$id = $_GET['id'];
+$id = $_POST['id'];
+echo $id . "mau di ubah";
 $kelas = $_POST['kelas'];
 $materi = $_POST['materi'];
 $jumlah_murid = $_POST['jumlah_murid'];
@@ -9,7 +10,7 @@ $kehadiran = $_POST['kehadiran'];
 $nama_guru = $_POST['nama_guru'];
 
 $sql = "UPDATE absences SET
-        nama_guru='$nama_guru'
+        nama_guru='$nama_guru',
         kelas='$kelas',
         materi='$materi',
         jumlah_murid='$jumlah_murid', 

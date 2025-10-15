@@ -16,7 +16,7 @@ if ($koneksi->query($sql) === TRUE) {
 
 
 
-
+header("Location: ../absensi.php");
 
 
 

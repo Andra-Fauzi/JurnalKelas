@@ -26,20 +26,25 @@
                 <table >
                     <tr>
                         <td>id</td>
-                        <td>kelas</td>
-                        <td>materi</td>
-                        <td>jumlah murid</td>
-                        <td>kehadiran</td>
-                        <td>aksi</td>
+                        <td>Nama Guru</td>
+                        <td>Kelas</td>
+                        <td>Materi</td>
+                        <td>Jumlah murid</td>
+                        <td>Kehadiran</td>
+                        <td>Aksi</td>
                     </tr>
+                    <?php include "backend/absences_read.php"; ?>
+                    <?php foreach($data as $row): ?>
                     <tr>
-                        <td>1</td>
-                        <td>XI RPL 2</td>
-                        <td>RPL</td>
-                        <td>30</td>
-                        <td>28</td>
-                        <td>hapus <br> edit </td>
+                        <td><?= $row["id"] ?></td>
+                        <td><?= $row["nama_guru"] ?></td>
+                        <td><?= $row["kelas"] ?></td>
+                        <td><?= $row["materi"] ?></td>
+                        <td><?= $row["jumlah_murid"] ?></td>
+                        <td><?= $row["kehadiran"] ?></td>
+                        <td><a href="backend/absences_delete.php?id=<?= $row['id']?>">Hapus</a> <br> <a href="form_absensi.php?id=<?= $row["id"] ?>">Edit</a></td>
                     </tr>
+                    <?php endforeach?>
                 </table>
                 <a href="form_absensi.php" class="tambah">tambah data</a>
         </div>
