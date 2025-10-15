@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(!isset($_SESSION['admin']))
+{
+    header("Location: index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,15 +22,27 @@
             <?php if(isset($_GET['id'])): ?>
                 <input type="hidden" name="id" value=<?= $_GET['id'] ?>>
             <?php endif?>
-            <input type="text" name="nama_guru" placeholder="Nama guru">
+            <input type="text" name="nama_guru" placeholder="Nama guru" value="<?= $_SESSION["name"] ?>" disabled>
             <br>
-            <input type="text" name="kelas" placeholder="kelas">
+            <!-- <input type="text" name="kelas" placeholder="kelas" required> -->
+            <label for="kelas">Kelas:</label>
+            <select name="kelas" id="kelas" required>
+                <?php 
+                    include "backend/config.php";
+                    $sql = "SELECT * FROM classes";
+                    $result = $koneksi->query($sql);
+                    $data = $result->fetch_all(MYSQLI_ASSOC);
+                ?>
+                <?php foreach($data as $row): ?>
+                <option value="<?= $row['nama'] ?>"><?= $row['nama'] ?></option>
+                <?php endforeach ?>
+            </select>
             <br>
-            <input type="text" name="materi" placeholder="materi">
+            <input type="text" name="materi" placeholder="materi" required>
             <br>
-            <input type="number" name="jumlah_murid" placeholder="jumlah murid">
+            <input type="number" name="jumlah_murid" placeholder="jumlah murid" required>
             <br>
-            <input type="number" name="kehadiran" placeholder="kehadiran">
+            <input type="number" name="kehadiran" placeholder="kehadiran" required>
             <br>
             <input type="submit" name="submit">
         </div>

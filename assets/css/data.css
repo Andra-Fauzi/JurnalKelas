@@ -24,7 +24,7 @@ body{
     padding: 8px;
     text-decoration: none;
     color: black;
-    background-color: white;
+    /* background-color: white; */
 }
 
 .content {
@@ -79,5 +79,47 @@ table {
 
 th,td {
     border: 1px solid black;
-    padding: 8px;
+    padding: 12px;
+}
+
+.userbar {
+    display: flex;
+    justify-content: end;
+}
+
+.user 
+{
+    display: flex;
+    padding: 5px;
+    border-radius: 10px;
+    width: 8%;
+    justify-content: space-between;
+    /* background-color: #2a84dd; */
+    align-items: center;
+}
+
+.button
+{
+    display: flex;
+    padding: 5px;
+    border-radius: 10px;
+    width: 8%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button a {
+    margin-right: 20px;
+    background-color: #2a84dd;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.action
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
