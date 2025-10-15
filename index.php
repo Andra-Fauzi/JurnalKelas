@@ -20,8 +20,8 @@
         <div class="content">
             <div class="maincontent">
                 <div class="authbar">
-                    <a href="#">Register</a>
-                    <a href="#">Login</a>
+                    <a href="register.php">Register</a>
+                    <a href="login.php">Login</a>
                 </div>
 
                 <img src="assets/img/jurnal.jpg" alt="" height="400" width="800">
