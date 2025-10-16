@@ -7,7 +7,7 @@ if(isset($_POST['submit']))
     $password=$_POST['password'];
     trim($name);
     trim($password);
-    if($name != "" || $password != "")
+    if($name != "" && $password != "")
     {
         $sql = "select * from users where nama='$name'";
     

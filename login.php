@@ -10,7 +10,7 @@ if(isset($_POST['submit']))
     $sql = "select * from users where nama='$name'";
 
     
-    if($name != "" || $password != "")
+    if($name != "" && $password != "")
     {
         $result=$koneksi->query($sql);
         $data=$result->fetch_all(MYSQLI_ASSOC);

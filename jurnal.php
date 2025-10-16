@@ -66,6 +66,7 @@ else
                     <tr>
                         <td>id</td>
                         <td>Judul</td>
+                        <td>Guru</td>
                         <td>Kelas</td>
                         <td>Gambar</td>
                         <td>Jurnal</td>
@@ -76,11 +77,13 @@ else
                     $offset = (isset($_GET['index'])) ? $_GET['index'] : 0;
                     $modified_data = array_slice($data, $offset * 3, 3);
                     // var_dump($offset*4, count($data)-1);
+                    var_dump($data);
                     ?>
                     <?php foreach($modified_data as $index => $row): ?>
                     <tr>
                         <td><?= $index+1 ?></td>
                         <td><?= $row["judul"] ?></td>
+                        <td><?= $row["nama_guru"] ?></td>
                         <td><?= $row["kelas"] ?></td>
                         <td style="padding: 0; margin: 0;"><img style="padding: 0; margin: 0;" src=<?= $row["url_gambar"]?> alt="" height="200" width="300"></td>
                         <td><?= substr($row["jurnal"], 0, 30) ?>

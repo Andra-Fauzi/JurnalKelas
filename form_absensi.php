@@ -22,7 +22,7 @@ if(!isset($_SESSION['admin']))
             <?php if(isset($_GET['id'])): ?>
                 <input type="hidden" name="id" value=<?= $_GET['id'] ?>>
             <?php endif?>
-            <input type="text" name="nama_guru" placeholder="Nama guru" value="<?= $_SESSION["name"] ?>" disabled>
+            <input type="text" name="nama_guru" placeholder="Nama guru" value="<?= $_SESSION["name"] ?>">
             <br>
             <!-- <input type="text" name="kelas" placeholder="kelas" required> -->
             <label for="kelas">Kelas:</label>

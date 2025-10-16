@@ -57,7 +57,7 @@ if (isset($_POST["submit"])) {
                 <label for="image">Image:</label>
                 <input type="file" name="image" accept="image/*" required><br>
                 <textarea name="jurnal" id="jurnal" placeholder="jurnal" required></textarea><br>
-                <input type="text" name="nama_guru" placeholder="nama guru" value="<?= $_SESSION['name'] ?>" disabled><br>
+                <input type="text" name="nama_guru" placeholder="nama guru" value="<?= $_SESSION['name'] ?>"><br>
                 <input type="submit" name="submit" value="Simpan">
             </form>
         </div>
