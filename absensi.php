@@ -75,7 +75,7 @@ else
                     <?php 
                     $offset = (isset($_GET['index'])) ? $_GET['index'] : 0;
                     $modified_data = array_slice($data, $offset * 4, 4);
-                    // var_dump($offset*4, count($data)-1);
+                    // var_dump(($offset+1)*4, count($data));
                     ?>
                     <?php foreach($modified_data as $index => $row): ?>
                     <tr>
@@ -100,7 +100,7 @@ else
                         <?php if($offset != 0): ?>
                             <a class="tambah" href="absensi.php?index=<?= $offset-1 ?>">Back</a>
                         <?php endif ?>
-                        <?php if($offset*4 < count($data)-1): ?>
+                        <?php if((($offset+1)*4 < count($data))): ?>
                             <a class="tambah" href="absensi.php?index=<?= $offset+1 ?>">Next</a>
                         <?php endif?>
                     <?php endif?>
