@@ -77,7 +77,7 @@ else
                     $offset = (isset($_GET['index'])) ? $_GET['index'] : 0;
                     $modified_data = array_slice($data, $offset * 3, 3);
                     // var_dump($offset*4, count($data)-1);
-                    var_dump($data);
+                    // var_dump($data);
                     ?>
                     <?php foreach($modified_data as $index => $row): ?>
                     <tr>
