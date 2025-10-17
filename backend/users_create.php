@@ -1,8 +1,8 @@
 <?php
 include 'config.php';
 
-$nama = $_POST['nama'];
-$password = $_POST['password'];
+$nama = htmlspecialchars($_POST['nama']);
+$password = htmlspecialchars($_POST['password']);
 $admin = 0;
 
 

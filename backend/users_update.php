@@ -1,10 +1,10 @@
 <?php
 include 'config.php';
 
-$id = $_POST['id'];
-$nama = $_POST['nama'];
-$password= $_POST['password'];
-$admin = $_POST['admin'];
+$id = htmlspecialchars($_POST['id']);
+$nama = htmlspecialchars($_POST['nama']);
+$password= htmlspecialchars($_POST['password']);
+$admin = htmlspecialchars($_POST['admin']);
 
 
 $sql = "UPDATE users SET

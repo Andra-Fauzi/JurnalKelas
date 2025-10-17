@@ -1,11 +1,11 @@
 <?php
 include 'config.php';
 
-$judul = $_POST['judul'];
-$kelas = $_POST['kelas'];
-$url_image = $_POST["url_image"];
-$jurnal = $_POST['jurnal'];
-$nama_guru = $_POST['nama_guru'];
+$judul = htmlspecialchars($_POST['judul']);
+$kelas = htmlspecialchars($_POST['kelas']);
+$url_image = htmlspecialchars($_POST["url_image"]);
+$jurnal = htmlspecialchars($_POST['jurnal']);
+$nama_guru = htmlspecialchars($_POST['nama_guru']);
 
 
 $sql = "INSERT INTO daily_journals (judul, url_gambar, kelas, jurnal, nama_guru)

@@ -1,11 +1,11 @@
 <?php
 include 'config.php';
 
-$id = $_POST['id'];
-$url_image = $_POST["url_image"];
-$kelas = $_POST['kelas'];
-$jurnal= $_POST['jurnal'];
-$nama_guru = $_POST['nama_guru'];
+$id = htmlspecialchars($_POST['id']);
+$url_image = htmlspecialchars($_POST["url_image"]);
+$kelas = htmlspecialchars($_POST['kelas']);
+$jurnal= htmlspecialchars($_POST['jurnal']);
+$nama_guru = htmlspecialchars($_POST['nama_guru']);
 
 
 $sql = "UPDATE daily_journals SET
