@@ -105,7 +105,7 @@ else
                         <?php if($offset != 0): ?>
                             <a class="tambah" href="jurnal.php?index=<?= $offset-1 ?>">Back</a>
                         <?php endif ?>
-                        <?php if(($offset+1)*3 < count($data)-1): ?>
+                        <?php if(($offset+1)*3 < count($data)): ?>
                             <a class="tambah" href="jurnal.php?index=<?= $offset+1 ?>">Next</a>
                         <?php endif?>
                     <?php endif?>
