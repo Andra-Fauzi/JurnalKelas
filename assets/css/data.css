@@ -123,3 +123,80 @@ th,td {
     justify-content: center;
     flex-direction: column;
 }
+
+.absensi-sm
+{
+    border: 1px solid black;
+    background-color: #2a84dd;
+    border-radius: 8px;
+    display: none;
+    color:white;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.container-sm {
+    display: none;
+}
+
+.absensi-sm hr {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.jurnal-sm
+{
+    border: 1px solid black;
+    background-color: #2a84dd;
+    border-radius: 8px;
+    display: none;
+    color:white;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.jurnal-sm hr {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.jurnal-sm img {
+}
+
+.dashboard-image {
+    width: 700;
+    height: 400;
+}
+
+@media (max-width: 768px) {
+    .container-sm {
+        display: block;
+    }
+    .absensi-sm {
+        display: flex;
+    }
+    .jurnal-sm {
+        display: flex;
+    }
+    .absensi-lg{
+        display: none;
+    }
+    .jurnal-lg{
+        display: none;
+    }
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+     .content{
+        width: auto;
+
+     }
+     .dashboard-image {
+        height: 50;
+        width: 100;
+     }
+}

@@ -62,7 +62,7 @@ else
                         </div>
                     </div>
                 <?php endif ?>
-                <table >
+                <table class="jurnal-lg">
                     <tr>
                         <td>id</td>
                         <td>Judul</td>
@@ -70,7 +70,9 @@ else
                         <td>Kelas</td>
                         <td>Gambar</td>
                         <td>Jurnal</td>
+                        <?php if(isset($_SESSION['admin'])): ?>
                         <td>Aksi</td>
+                        <?php endif ?>
                     </tr>
                     <?php include "backend/daily_jurnal_read.php" ?>
                     <?php 
@@ -81,7 +83,7 @@ else
                     ?>
                     <?php foreach($modified_data as $index => $row): ?>
                     <tr>
-                        <td><?= $index+1 ?></td>
+                        <td><?= ($index+1)+($offset*3) ?></td>
                         <td><?= $row["judul"] ?></td>
                         <td><?= $row["nama_guru"] ?></td>
                         <td><?= $row["kelas"] ?></td>
@@ -90,12 +92,14 @@ else
                         <?php if(strlen($row["jurnal"])>30):?>
                         <a href="description.php?id=<?= $row['id'] ?>">Read more</a></td>
                         <?php endif ?>
+                        <?php if(isset($_SESSION["admin"])): ?>
                         <td>
                             <div class="action">
                                 <a class="tambah" href="backend/daily_jurnal_delete.php?id=<?= $row['id']?>">Hapus</a> <br> 
                                 <a class="tambah" href="form_jurnal.php?id=<?= $row["id"] ?>">Edit</a>
                             </div>
                         </td>
+                        <?php endif ?>
                     </tr>
                     <?php endforeach ?>
                 </table>
@@ -114,6 +118,32 @@ else
                 <?php if(isset($_SESSION["admin"])):?>
                     <a href="form_jurnal.php" class="tambah">tambah data</a>
                 <?php endif ?>
+                <div class="container-sm">
+                    <?php foreach($modified_data as $index => $row): ?>
+                    <div class="jurnal-sm">
+                        <div>
+                            <img src="<?= $row["url_gambar"] ?>" alt="" width="200" height="150">
+                            <h1><?= $row["kelas"] ?></h1>
+                            <h2><?= $row["nama_guru"] ?></h2>
+                        </div>
+                        <hr>
+                        <div>
+                            
+                            <p><?= $row["judul"] ?></p>
+                            <a href="description.php?id=<?= $row['id'] ?>">Read more</a>
+                            <?php if(isset($_SESSION["admin"])): ?>
+                        
+                            <div class="action">
+                                <a class="tambah" href="backend/daily_jurnal_delete.php?id=<?= $row['id']?>">Hapus</a> <br> 
+                                <a class="tambah" href="form_jurnal.php?id=<?= $row["id"] ?>">Edit</a>
+                            </div>
+                        
+                            <?php endif ?>
+                        </div>
+                        
+                    </div>
+                    <?php endforeach ?>
+                </div>
         </div>
 
         </div>

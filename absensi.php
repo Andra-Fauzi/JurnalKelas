@@ -61,7 +61,7 @@ else
                         </div>
                     </div>
                 <?php endif ?>
-                <table >
+                <table class="absensi-lg">
                     <tr>
                         <td>id</td>
                         <td>Nama Guru</td>
@@ -69,7 +69,9 @@ else
                         <td>Materi</td>
                         <td>Jumlah murid</td>
                         <td>Kehadiran</td>
+                        <?php if(isset($_SESSION['admin'])): ?>
                         <td>Aksi</td>
+                        <?php endif ?>
                     </tr>
                     <?php include "backend/absences_read.php"; ?>
                     <?php 
@@ -79,18 +81,20 @@ else
                     ?>
                     <?php foreach($modified_data as $index => $row): ?>
                     <tr>
-                        <td><?= $index+1 ?></td>
+                        <td><?= ($index+1)+($offset*4) ?></td>
                         <td><?= $row["nama_guru"] ?></td>
                         <td><?= $row["kelas"] ?></td>
                         <td><?= $row["materi"] ?></td>
                         <td><?= $row["jumlah_murid"] ?></td>
                         <td><?= $row["kehadiran"] ?></td>
+                        <?php if(isset($_SESSION["admin"])): ?>
                         <td>
                             <div class="action">
                                 <a class="tambah" href="backend/daily_jurnal_delete.php?id=<?= $row['id']?>">Hapus</a> <br> 
                                 <a class="tambah" href="form_jurnal.php?id=<?= $row["id"] ?>">Edit</a>
                             </div>
                         </td>
+                        <?php endif ?>
                     </tr>
                     <?php endforeach?>
                 </table>
@@ -110,6 +114,33 @@ else
                 <?php if(isset($_SESSION["admin"])):?>
                     <a href="form_absensi.php" class="tambah">tambah data</a>
                 <?php endif ?>
+                <div class="container-sm">
+                    <?php foreach($modified_data as $index => $row): ?>
+                    <div class="absensi-sm">
+                        <div>
+                            <h1><?= $row["kelas"] ?></h1>
+                            <h2><?= $row["nama_guru"] ?></h2>
+                        </div>
+                        <hr>
+                        <div>
+                            
+                            <h3>Materi: <?= $row["materi"] ?></h3>
+                            <p>Jumlah murid: <?= $row["jumlah_murid"] ?></p>
+                            <p>Kehadiran: <?= $row["kehadiran"] ?></p>
+                            <?php if(isset($_SESSION["admin"])): ?>
+                        
+                            <div class="action">
+                                <a class="tambah" href="backend/daily_jurnal_delete.php?id=<?= $row['id']?>">Hapus</a> <br> 
+                                <a class="tambah" href="form_jurnal.php?id=<?= $row["id"] ?>">Edit</a>
+                            </div>
+                        
+                            <?php endif ?>
+                        </div>
+                        
+                    </div>
+                    <?php endforeach ?>
+                </div>
+                
         </div>
 
         </div>

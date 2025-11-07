@@ -21,7 +21,7 @@ else
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jurnal kelas</title>
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/data.css">
 </head>
 <body>
     <div class="container">
@@ -63,7 +63,7 @@ else
                     </div>
                 <?php endif ?>
 
-                <img src="assets/img/jurnal.jpg" alt="" height="400" width="800">
+                <img src="assets/img/jurnal.jpg" alt="" class="dashboard-image">
                 <h1>Selamat datang di jurnal  kelas</h1>
         </div>
 
